@@ -45,6 +45,10 @@ def main():
         for asteroid in group_astero:
             if asteroid.collision_detection(bobby):
                 sys.exit("Game Over")
+            for bullets in group_shots:#kill feature from pygame on object
+                if asteroid.collision_detection(bullets):
+                    bullets.kill()
+                    asteroid.kill()
 
         for players in group_drawable:
             players.draw(screen)
