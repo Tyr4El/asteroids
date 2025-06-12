@@ -48,7 +48,7 @@ def main():
             for bullets in group_shots:#kill feature from pygame on object
                 if asteroid.collision_detection(bullets):
                     bullets.kill()
-                    asteroid.kill()
+                    asteroid.split()#instead of kill
 
         for players in group_drawable:
             players.draw(screen)
